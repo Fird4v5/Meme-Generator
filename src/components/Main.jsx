@@ -7,8 +7,8 @@ import DownloadBtn from './DownloadBtn.jsx';
 const Main = () => {
 
 const [meme, setMeme] = React.useState({
-                        topText: "Shut up",
-                        bottomText: "you piece of shit",
+                        topText: "",
+                        bottomText: "",
                         imgUrl: "https://i.imgflip.com/9ehk.jpg"      
 })
 

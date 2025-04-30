@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+
+*, 
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0; 
+  padding: 0; 
+}
+
+body {
+  font-family: "Karla", sans-serif;
+}
+
+/* HEADER STYLE */
+
+header {
+  background-color:#672280;
+  background-image: linear-gradient(to right, #672280, #A626D3);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem; 
+  padding:  1rem 2rem;
+}
+
+header img {
+  width: 2.5rem; 
+  height: 2rem;
+}
+
+header h1 {
+  color: #fff; 
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* MAIN STYLE */
+
+
+
+.meme-generator {
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 1rem;
+  padding: 1rem;
+  margin-top: 2rem;
+  margin-inline: auto;
+}
+
+/* INPUT TOOLBOX GRID SELECTOR */
+
+.input-toolbox {
+  display: grid;
+  gap: 1rem;
+  place-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+                'getMeme getMeme' 
+                'topText bottomText'
+                'top-x top-y'
+                'bottom-x bottom-y'
+                'download download'
+  ;
+}
+
+
+
+.input-toolbox .topText {
+  grid-area: topText;
+}
+
+.input-toolbox .bottomText {
+  grid-area: bottomText;
+}
+
+.input-toolbox .top-x {
+  grid-area: top-x;
+}
+
+.input-toolbox .top-y {
+  grid-area: top-y;
+}
+
+.input-toolbox .bottom-x {
+  grid-area: bottom-x;
+}
+
+.input-toolbox .bottom-y {
+  grid-area: bottom-y;
+}
+
+.input-toolbox .getMeme {
+  grid-area: getMeme;
+}
+
+.input-toolbox .download {
+  grid-area: download;
+}
+
+
+.input-toolbox label {
+  color: #374151;
+  font-size: 0.6rem;
+  font-weight: 500; 
+}
+
+.input-toolbox input {
+  display: block;
+  font-size: 0.6rem;
+  font-family: "Karla", sans-serif;
+  margin-top: 0.2rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  border: 0.82px solid #D1D5DB; 
+  box-shadow: 0px 0.82px 1.64px 0px #0000000D;
+}
+
+
+.btn {
+  display: block;
+  max-width: 250px;
+  background-color: #672280;
+  background-image: linear-gradient(to right, #711F8D, #A818DA);
+  color: #fff;
+  font-family: "Karla", sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 0.4rem 0.7rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.download {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.download img {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+ 
+canvas {
+    width: 90%;
+    height: 13rem;
+    margin-inline: auto;
+    border: 2px solid #000;
+  }
+
+
+  @media (min-width: 430px) {
+    html {
+      font-size: 20px;
+    }
+  
+    canvas {
+      height: 14rem;
+    }
+  }  
+
+
+@media (min-width: 530px) {
+  html {
+    font-size: 22px;
+  }
+
+  canvas {
+    height: 15rem;
+  }
+}
+
+@media (min-width: 620px) {
+  html {
+    font-size: 24px;
+  }
+  canvas {
+    height: 16rem;
+  }
+}
+
+
+@media (min-width: 750px) {
+  html {
+    font-size: 26px;
+  }
+  canvas {
+    height: 17rem;
+  }
+}
+
+
+
+@media (min-width: 860px) {
+  .meme-generator {
+    flex-direction: row;
+  }
+  .input-toolbox {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: unset;
+    grid-template-areas: 
+                  'getMeme'
+                  'topText'
+                  'bottomText'
+                  'top-x'
+                  'top-y'
+                  'bottom-x'
+                  'bottom-y'
+                  'download'
+    ;
+  }
+
+  canvas {
+    width: 80%;
+    height: 25rem;
+  }
+
+}

@@ -26,7 +26,7 @@ Create custom memes with top and bottom text, freely position them, and generate
 ---
 
 ## 🌐 Live Demo  
-👉 [firdavs.codes](https://firdavs.codes)  
+👉 [meme-generator.firdavs.codes](https://meme-generator.firdavs.codes)  
 
 ---
 

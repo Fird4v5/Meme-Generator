@@ -7,7 +7,7 @@ const InputToolbox = (props) => {
         <>
             <div className="topText">
             <label>Top text
-                <input                                                      
+                <input                                           style={{ marginTop: "0.2rem"}}         
                 onChange={props.handleChange}             
                 type="text"                         
                 placeholder="Enter top text"                    
@@ -18,7 +18,8 @@ const InputToolbox = (props) => {
 
             <div className="bottomText">
             <label>Bottom text
-                <input                                          
+                <input  
+                style={{ marginTop: "0.2rem"}}                                         
                 onChange={props.handleChange}                         
                 type="text"                                 
                 placeholder="Enter bottom text"                                           

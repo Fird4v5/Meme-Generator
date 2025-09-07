@@ -1,224 +1,171 @@
-@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;600;700&display=swap');
 
+/* ---------- VARIABLES ---------- */
+:root {
+  --bg-dark: #1c1c2e;
+  --card-bg: #27293d;
+  --accent: #8b5cf6;
+  --accent-hover: #7c3aed;
+  --text-light: #f5f5f5;
+  --text-muted: #a0a0b0;
+  --border-color: #3a3a50;
+  --radius: 0.75rem;
+}
 
-*, 
-::before,
-::after {
+/* ---------- GLOBAL ---------- */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  margin: 0; 
-  padding: 0; 
 }
 
 body {
-  font-family: "Karla", sans-serif;
+  font-family: 'Karla', sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
 }
 
-/* HEADER STYLE */
-
+/* ---------- HEADER ---------- */
 header {
-  background-color:#672280;
-  background-image: linear-gradient(to right, #672280, #A626D3);
   display: flex;
   align-items: center;
-  gap: 0.6rem; 
-  padding:  1rem 2rem;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(90deg, #6d28d9, #9333ea);
+  color: #fff;
 }
 
 header img {
-  width: 2.5rem; 
+  width: 2rem;
   height: 2rem;
+  object-fit: contain;
 }
 
 header h1 {
-  color: #fff; 
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 
-/* MAIN STYLE */
-
-
-
+/* ---------- MAIN CONTAINER ---------- */
 .meme-generator {
-  max-width: 1000px;
   display: flex;
   flex-direction: column-reverse;
-  gap: 1rem;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
   padding: 1rem;
-  margin-top: 2rem;
-  margin-inline: auto;
 }
 
-/* INPUT TOOLBOX GRID SELECTOR */
-
+/* ---------- INPUT PANEL ---------- */
 .input-toolbox {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 1rem;
-  place-items: center;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-areas:
-                'getMeme getMeme' 
-                'topText bottomText'
-                'top-x top-y'
-                'bottom-x bottom-y'
-                'download download'
-  ;
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  width: 100%;
 }
-
-
-
-.input-toolbox .topText {
-  grid-area: topText;
-}
-
-.input-toolbox .bottomText {
-  grid-area: bottomText;
-}
-
-.input-toolbox .top-x {
-  grid-area: top-x;
-}
-
-.input-toolbox .top-y {
-  grid-area: top-y;
-}
-
-.input-toolbox .bottom-x {
-  grid-area: bottom-x;
-}
-
-.input-toolbox .bottom-y {
-  grid-area: bottom-y;
-}
-
-.input-toolbox .getMeme {
-  grid-area: getMeme;
-}
-
-.input-toolbox .download {
-  grid-area: download;
-}
-
 
 .input-toolbox label {
-  color: #374151;
-  font-size: 0.6rem;
-  font-weight: 500; 
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0.3rem;
 }
 
 .input-toolbox input {
-  display: block;
-  font-size: 0.6rem;
-  font-family: "Karla", sans-serif;
-  margin-top: 0.2rem;
-  padding: 0.3rem 0.6rem;
-  border-radius: 5px;
-  border: 0.82px solid #D1D5DB; 
-  box-shadow: 0px 0.82px 1.64px 0px #0000000D;
+  width: 100%;
+  padding: 0.5rem 0.7rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  background: #1a1a27;
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.input-toolbox input:focus {
+  outline: none;
+  border-color: var(--accent);
 }
 
 
+/* ---------- BUTTONS ---------- */
 .btn {
-  display: block;
-  max-width: 250px;
-  background-color: #672280;
-  background-image: linear-gradient(to right, #711F8D, #A818DA);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1rem;
+  background: var(--accent);
   color: #fff;
-  font-family: "Karla", sans-serif;
-  font-size: 0.6rem;
-  font-weight: 700;
-  padding: 0.4rem 0.7rem;
-  border-radius: 5px;
   border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
   cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--accent-hover);
 }
 
 .download {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   gap: 0.3rem;
 }
 
 .download img {
-  width: 0.7rem;
-  height: 0.7rem;
+  width: 15px; 
 }
 
- 
+/* ---------- CANVAS ---------- */
 canvas {
-    width: 90%;
-    height: 13rem;
-    margin-inline: auto;
-    border: 2px solid #000;
-  }
-
-
-  @media (min-width: 430px) {
-    html {
-      font-size: 20px;
-    }
-  
-    canvas {
-      height: 14rem;
-    }
-  }  
-
-
-@media (min-width: 530px) {
-  html {
-    font-size: 22px;
-  }
-
-  canvas {
-    height: 15rem;
-  }
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  aspect-ratio: 4/3;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  background: #111;
+  margin: 0 auto;
 }
 
-@media (min-width: 620px) {
-  html {
-    font-size: 24px;
-  }
-  canvas {
-    height: 16rem;
-  }
-}
-
-
-@media (min-width: 750px) {
-  html {
-    font-size: 26px;
-  }
-  canvas {
-    height: 17rem;
-  }
-}
-
-
-
-@media (min-width: 860px) {
+/* ---------- RESPONSIVE ---------- */
+@media (min-width: 1024px) {
   .meme-generator {
     flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
   }
+
   .input-toolbox {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: unset;
-    grid-template-areas: 
-                  'getMeme'
-                  'topText'
-                  'bottomText'
-                  'top-x'
-                  'top-y'
-                  'bottom-x'
-                  'bottom-y'
-                  'download'
-    ;
+    flex: 0 0 300px;
+    grid-template-columns: 1fr;
   }
 
   canvas {
-    width: 80%;
-    height: 25rem;
+    flex: 1;
+    height: 450px;
+  }
+}
+
+
+
+
+@media (max-width: 480px) {
+  .input-toolbox {
+    grid-template-columns: 1fr;
   }
 
+  canvas {
+    height: 250px;
+  }
 }
